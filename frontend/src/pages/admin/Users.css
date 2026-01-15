@@ -1,0 +1,25 @@
+.users-table {
+  background: white;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+.role {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.role-admin {
+  background: #dc3545;
+  color: white;
+}
+
+.role-user {
+  background: #6c757d;
+  color: white;
+}
+
+

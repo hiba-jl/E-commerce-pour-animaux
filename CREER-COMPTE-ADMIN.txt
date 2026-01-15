@@ -1,0 +1,151 @@
+═══════════════════════════════════════════════════════════════
+  CRÉER UN COMPTE ADMIN - GUIDE ÉTAPE PAR ÉTAPE
+═══════════════════════════════════════════════════════════════
+
+📋 ÉTAPE 1 : CRÉER UN COMPTE UTILISATEUR NORMAL
+═══════════════════════════════════════════════════════════════
+
+1. Ouvrez l'application dans votre navigateur
+   → http://localhost:3000
+
+2. Cliquez sur "Inscription" (ou "Register")
+
+3. Créez un compte avec :
+   - Nom
+   - Email (ex: admin@example.com)
+   - Mot de passe (au moins 6 caractères)
+
+4. Cliquez sur "S'inscrire"
+
+✅ Votre compte est créé, mais il est encore un "user" normal
+
+═══════════════════════════════════════════════════════════════
+📋 ÉTAPE 2 : PROMOUVOIR EN ADMIN
+═══════════════════════════════════════════════════════════════
+
+Vous avez 3 méthodes pour devenir admin :
+
+───────────────────────────────────────────────────────────────
+MÉTHODE 1 : VIA MONGODB COMPASS (PLUS FACILE - RECOMMANDÉ)
+───────────────────────────────────────────────────────────────
+
+1. Ouvrez MongoDB Compass
+   → Si vous ne l'avez pas, installez-le depuis mongodb.com
+
+2. Connectez-vous à MongoDB :
+   → Si MongoDB local : mongodb://localhost:27017
+   → Si MongoDB Atlas : utilisez votre chaîne de connexion
+
+3. Naviguez vers la base de données :
+   → Cliquez sur la base "ecommerce"
+
+4. Allez dans la collection "users"
+
+5. Trouvez votre utilisateur (recherchez par votre email)
+
+6. Cliquez sur votre utilisateur pour l'éditer
+
+7. Trouvez le champ "role" (il contient "user")
+
+8. Modifiez "user" en "admin" (sans guillemets)
+
+9. Cliquez sur "Update"
+
+✅ Votre compte est maintenant admin !
+
+───────────────────────────────────────────────────────────────
+MÉTHODE 2 : VIA MONGODB SHELL (COMMANDES)
+───────────────────────────────────────────────────────────────
+
+1. Ouvrez un terminal
+2. Connectez-vous à MongoDB :
+   
+   mongosh
+   
+   OU (si mongosh n'existe pas) :
+   
+   mongo
+
+3. Utilisez la base de données :
+   
+   use ecommerce
+
+4. Mettez à jour votre utilisateur :
+   
+   db.users.updateOne(
+     { email: "votre-email@example.com" },
+     { $set: { role: "admin" } }
+   )
+   
+   ⚠️ REMPLACEZ "votre-email@example.com" par votre email !
+
+5. Vérifiez que ça a fonctionné :
+   
+   db.users.findOne({ email: "votre-email@example.com" })
+
+───────────────────────────────────────────────────────────────
+MÉTHODE 3 : VIA SCRIPT NODE.JS (AVANCÉ)
+───────────────────────────────────────────────────────────────
+
+Créez un fichier backend/scripts/createAdmin.js avec :
+
+const mongoose = require('mongoose');
+const User = require('../models/User');
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ecommerce', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(async () => {
+  const email = process.argv[2];
+  if (!email) {
+    console.error('Usage: node scripts/createAdmin.js email@example.com');
+    process.exit(1);
+  }
+  
+  const user = await User.findOne({ email });
+  if (!user) {
+    console.error('Utilisateur non trouvé');
+    process.exit(1);
+  }
+  
+  user.role = 'admin';
+  await user.save();
+  console.log(`L'utilisateur ${email} est maintenant administrateur`);
+  process.exit(0);
+})
+.catch(err => {
+  console.error(err);
+  process.exit(1);
+});
+
+Puis exécutez :
+cd backend
+node scripts/createAdmin.js votre-email@example.com
+
+═══════════════════════════════════════════════════════════════
+📋 ÉTAPE 3 : SE CONNECTER EN TANT QU'ADMIN
+═══════════════════════════════════════════════════════════════
+
+1. Dans l'application, déconnectez-vous (si vous êtes connecté)
+
+2. Reconnectez-vous avec votre email et mot de passe
+
+3. Vous devriez maintenant voir l'onglet "Admin" dans la barre de navigation
+
+4. Cliquez sur "Admin" pour accéder au tableau de bord administrateur
+
+✅ Vous êtes maintenant connecté en tant qu'admin !
+
+═══════════════════════════════════════════════════════════════
+🎯 RÉCAPITULATIF
+═══════════════════════════════════════════════════════════════
+
+1. Créez un compte normal via l'interface web
+2. Utilisez MongoDB Compass pour changer "role" de "user" à "admin"
+3. Déconnectez-vous et reconnectez-vous
+4. L'onglet "Admin" apparaîtra !
+
+═══════════════════════════════════════════════════════════════
+

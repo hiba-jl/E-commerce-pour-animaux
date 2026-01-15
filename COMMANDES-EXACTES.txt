@@ -1,0 +1,75 @@
+═══════════════════════════════════════════════════════════════
+  COMMANDES EXACTES POUR LANCER L'APPLICATION
+═══════════════════════════════════════════════════════════════
+
+📌 MÉTHODE 1 : UTILISER LE SCRIPT (PLUS SIMPLE)
+═══════════════════════════════════════════════════════════════
+
+Double-cliquez simplement sur : DEMARRER-APPLICATION.bat
+
+C'est tout ! Le script fera tout automatiquement.
+
+═══════════════════════════════════════════════════════════════
+📌 MÉTHODE 2 : COMMANDES MANUELLES
+═══════════════════════════════════════════════════════════════
+
+ÉTAPE 1 : Vérifier Node.js (dans un terminal Windows normal)
+─────────────────────────────────────────────────────────────
+node --version
+npm --version
+
+Si ces commandes fonctionnent, continuez. Sinon, installez Node.js.
+
+─────────────────────────────────────────────────────────────
+ÉTAPE 2 : Ouvrir le premier terminal - BACKEND
+─────────────────────────────────────────────────────────────
+
+cd C:\Users\sselm\OneDrive\Desktop\NosqlProject\backend
+
+npm install
+
+npm run dev
+
+→ Laissez ce terminal ouvert, il doit continuer à tourner
+→ Vous devriez voir "MongoDB Connected" et "Server running on port 5000"
+
+─────────────────────────────────────────────────────────────
+ÉTAPE 3 : Ouvrir un DEUXIÈME terminal - FRONTEND
+─────────────────────────────────────────────────────────────
+
+cd C:\Users\sselm\OneDrive\Desktop\NosqlProject\frontend
+
+npm install
+
+npm start
+
+→ Laissez ce terminal ouvert aussi
+→ Votre navigateur s'ouvrira automatiquement sur http://localhost:3000
+
+═══════════════════════════════════════════════════════════════
+📝 RÉSUMÉ DES COMMANDES
+═══════════════════════════════════════════════════════════════
+
+TERMINAL 1 (Backend):
+─────────────────────
+cd C:\Users\sselm\OneDrive\Desktop\NosqlProject\backend
+npm install
+npm run dev
+
+TERMINAL 2 (Frontend):
+──────────────────────
+cd C:\Users\sselm\OneDrive\Desktop\NosqlProject\frontend
+npm install
+npm start
+
+═══════════════════════════════════════════════════════════════
+⚠️ IMPORTANT
+═══════════════════════════════════════════════════════════════
+
+1. MongoDB doit être démarré avant de lancer le backend
+2. Les deux terminaux doivent rester ouverts
+3. Le backend doit démarrer AVANT le frontend
+
+═══════════════════════════════════════════════════════════════
+
+

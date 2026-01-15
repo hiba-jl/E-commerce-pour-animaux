@@ -1,0 +1,18 @@
+.filters {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.filters input,
+.filters select {
+  max-width: 300px;
+}
+
+.stock {
+  color: #666;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+

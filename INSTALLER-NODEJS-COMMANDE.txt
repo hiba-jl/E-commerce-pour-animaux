@@ -1,0 +1,26 @@
+═══════════════════════════════════════════════════════════════
+  COMMANDE POUR INSTALLER NODE.JS
+═══════════════════════════════════════════════════════════════
+
+✅ Votre système a winget installé !
+   Utilisez cette commande :
+
+───────────────────────────────────────────────────────────────
+
+Ouvrez PowerShell en tant qu'ADMINISTRATEUR et exécutez :
+
+winget install OpenJS.NodeJS.LTS
+
+───────────────────────────────────────────────────────────────
+
+⚠️ IMPORTANT :
+   1. Clic droit sur PowerShell → "Exécuter en tant qu'administrateur"
+   2. Exécutez la commande ci-dessus
+   3. Attendez la fin de l'installation
+   4. FERMEZ tous les terminaux
+   5. REDÉMARREZ Cursor
+   6. Testez : node --version
+
+═══════════════════════════════════════════════════════════════
+
+

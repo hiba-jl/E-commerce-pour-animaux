@@ -1,0 +1,86 @@
+═══════════════════════════════════════════════════════════════
+  INSTALLER MONGODB - INSTRUCTIONS
+═══════════════════════════════════════════════════════════════
+
+📥 MÉTHODE 1 : MONGODB LOCAL (RECOMMANDÉ POUR DÉBUTER)
+═══════════════════════════════════════════════════════════════
+
+ÉTAPE 1 : Télécharger MongoDB
+───────────────────────────────────────────────────────────────
+
+1. Ouvrez votre navigateur
+2. Allez sur : https://www.mongodb.com/try/download/community
+3. Choisissez :
+   - Version : "7.0 (Current)" ou "6.0 (LTS)"
+   - Platform : "Windows"
+   - Package : "MSI"
+4. Cliquez sur "Download"
+
+───────────────────────────────────────────────────────────────
+ÉTAPE 2 : Installer MongoDB
+───────────────────────────────────────────────────────────────
+
+1. Double-cliquez sur le fichier .msi téléchargé
+2. Dans l'assistant :
+   - ✅ Cliquez "Next"
+   - ✅ Acceptez la licence → "Next"
+   - ✅ Choisissez "Complete" → "Next"
+   - ✅ IMPORTANT : Cochez "Install MongoDB as a Service"
+   - ✅ Cochez "Install MongoDB Compass" (interface graphique)
+   - ✅ Cliquez "Install"
+   - ✅ Attendez la fin
+   - ✅ Cliquez "Finish"
+
+───────────────────────────────────────────────────────────────
+ÉTAPE 3 : Vérifier que MongoDB fonctionne
+───────────────────────────────────────────────────────────────
+
+1. MongoDB démarre automatiquement en tant que service
+2. Pour vérifier :
+   - Appuyez sur Win + R
+   - Tapez : services.msc
+   - Cherchez "MongoDB" dans la liste
+   - Il doit être "En cours d'exécution"
+
+OU ouvrez MongoDB Compass (installé avec MongoDB) :
+- Il se connectera automatiquement à MongoDB local
+
+═══════════════════════════════════════════════════════════════
+📥 MÉTHODE 2 : MONGODB ATLAS (CLOUD - GRATUIT)
+═══════════════════════════════════════════════════════════════
+
+Si vous préférez utiliser MongoDB dans le cloud (gratuit) :
+
+1. Allez sur : https://www.mongodb.com/cloud/atlas
+2. Créez un compte gratuit
+3. Créez un cluster gratuit (M0 - Free)
+4. Créez un utilisateur de base de données
+5. Obtenez votre chaîne de connexion
+6. Modifiez le fichier backend/.env :
+   
+   Remplacez :
+   MONGODB_URI=mongodb://localhost:27017/ecommerce
+   
+   Par votre URL Atlas :
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ecommerce
+
+═══════════════════════════════════════════════════════════════
+✅ CE QUE VOUS DEVEZ AVOIR AVANT DE LANCER
+═══════════════════════════════════════════════════════════════
+
+1. ✅ Node.js installé
+   → Test : node --version
+
+2. ✅ MongoDB installé et démarré
+   → Vérifiez dans Services Windows ou MongoDB Compass
+
+═══════════════════════════════════════════════════════════════
+🚀 APRÈS L'INSTALLATION
+═══════════════════════════════════════════════════════════════
+
+Une fois Node.js ET MongoDB installés :
+→ Vous pouvez lancer l'application avec DEMARRER-APPLICATION.bat
+
+═══════════════════════════════════════════════════════════════
+
+

@@ -1,0 +1,49 @@
+.back-link {
+  display: inline-block;
+  margin: 20px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.order-detail {
+  margin: 20px 0;
+}
+
+.order-info-section,
+.order-items-section,
+.shipping-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.order-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.item-total {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.order-total-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #dee2e6;
+  font-size: 24px;
+  text-align: right;
+}
+
+

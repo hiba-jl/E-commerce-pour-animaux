@@ -1,0 +1,54 @@
+═══════════════════════════════════════════════════════════════
+  RÉSOUDRE L'ERREUR POWERSHELL - POLITIQUE D'EXÉCUTION
+═══════════════════════════════════════════════════════════════
+
+❌ ERREUR : "l'exécution de scripts est désactivée sur ce système"
+
+✅ SOLUTION : Activer l'exécution de scripts
+═══════════════════════════════════════════════════════════════
+
+MÉTHODE 1 : ACTIVER POUR LE TERMINAL ACTUEL (RAPIDE)
+───────────────────────────────────────────────────────────────
+
+Dans PowerShell, tapez cette commande :
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Puis tapez "Y" pour confirmer quand on vous le demande.
+
+───────────────────────────────────────────────────────────────
+
+MÉTHODE 2 : ACTIVER DE FAÇON PERMANENTE (RECOMMANDÉ)
+───────────────────────────────────────────────────────────────
+
+1. Ouvrez PowerShell en tant qu'ADMINISTRATEUR :
+   - Clic droit sur PowerShell → "Exécuter en tant qu'administrateur"
+
+2. Exécutez cette commande :
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+
+3. Tapez "Y" pour confirmer
+
+───────────────────────────────────────────────────────────────
+
+MÉTHODE 3 : UTILISER CMD AU LIEU DE POWERSHELL
+───────────────────────────────────────────────────────────────
+
+Ouvrez CMD (Invite de commandes) au lieu de PowerShell :
+- Appuyez sur Win + R
+- Tapez : cmd
+- Appuyez sur Entrée
+
+Dans CMD, les commandes npm fonctionneront directement sans problème.
+
+═══════════════════════════════════════════════════════════════
+✅ APRÈS AVOIR APPLIQUÉ LA SOLUTION
+═══════════════════════════════════════════════════════════════
+
+1. Fermez le terminal actuel
+2. Rouvrez un nouveau terminal
+3. Essayez à nouveau : npm install
+
+═══════════════════════════════════════════════════════════════
+

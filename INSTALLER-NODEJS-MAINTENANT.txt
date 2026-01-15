@@ -1,0 +1,88 @@
+═══════════════════════════════════════════════════════════════
+  INSTALLER NODE.JS SUR WINDOWS - INSTRUCTIONS SIMPLES
+═══════════════════════════════════════════════════════════════
+
+📥 MÉTHODE 1 : TÉLÉCHARGEMENT DIRECT (PLUS SIMPLE)
+═══════════════════════════════════════════════════════════════
+
+ÉTAPE 1 : Télécharger Node.js
+───────────────────────────────────────────────────────────────
+
+1. Ouvrez votre navigateur web
+2. Allez sur : https://nodejs.org/
+3. Vous verrez 2 boutons :
+   - ✅ Cliquez sur le bouton VERT (LTS - Long Term Support)
+   - Ce bouton télécharge automatiquement l'installateur Windows
+
+4. Le fichier téléchargé s'appelle quelque chose comme :
+   "node-v20.11.0-x64.msi"
+
+───────────────────────────────────────────────────────────────
+ÉTAPE 2 : Installer Node.js
+───────────────────────────────────────────────────────────────
+
+1. Allez dans votre dossier Téléchargements
+2. Double-cliquez sur le fichier .msi téléchargé
+3. L'assistant d'installation s'ouvre :
+   
+   ✅ Cliquez sur "Next"
+   ✅ Acceptez la licence → "Next"
+   ✅ Choisissez le dossier d'installation → "Next"
+   ✅ IMPORTANT : Laissez coché "Add to PATH" → "Next"
+   ✅ Cliquez sur "Install"
+   ✅ Attendez la fin de l'installation
+   ✅ Cliquez sur "Finish"
+
+───────────────────────────────────────────────────────────────
+ÉTAPE 3 : Vérifier l'installation
+───────────────────────────────────────────────────────────────
+
+1. FERMEZ tous les terminaux et Cursor
+2. REDÉMARREZ Cursor
+3. Ouvrez un NOUVEAU terminal
+4. Tapez :
+   node --version
+   npm --version
+
+5. Si vous voyez des numéros (ex: v20.11.0), c'est bon ! ✅
+
+═══════════════════════════════════════════════════════════════
+📥 MÉTHODE 2 : VIA WINGET (SI VOUS PRÉFÉREZ LA COMMANDE)
+═══════════════════════════════════════════════════════════════
+
+1. Ouvrez PowerShell en tant qu'ADMINISTRATEUR :
+   - Appuyez sur Win + X
+   - Choisissez "Windows PowerShell (Admin)"
+
+2. Tapez cette commande :
+   winget install OpenJS.NodeJS.LTS
+
+3. Attendez la fin
+4. FERMEZ tous les terminaux
+5. REDÉMARREZ Cursor
+6. Testez : node --version
+
+═══════════════════════════════════════════════════════════════
+⚠️ IMPORTANT APRÈS L'INSTALLATION
+═══════════════════════════════════════════════════════════════
+
+1. FERMEZ complètement Cursor
+2. REDÉMARREZ Cursor
+3. Ouvrez un nouveau terminal
+4. Testez avec : node --version
+
+Si cela ne fonctionne toujours pas :
+- Redémarrez complètement votre ordinateur
+- Puis testez à nouveau
+
+═══════════════════════════════════════════════════════════════
+✅ APRÈS AVOIR INSTALLÉ NODE.JS
+═══════════════════════════════════════════════════════════════
+
+Vous pourrez alors lancer l'application avec :
+- Le script : DEMARRER-APPLICATION.bat
+- Ou les commandes manuelles (voir COMMANDES-EXACTES.txt)
+
+═══════════════════════════════════════════════════════════════
+
+
